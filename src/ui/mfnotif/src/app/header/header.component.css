@@ -1,0 +1,157 @@
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin push--auto($vertically: false) {
+  @if $vertically {
+    margin: {
+      top: $vertically;
+      bottom: $vertically;
+      left: auto;
+      right: auto;
+    }
+  } @else {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+}
+
+@mixin font-roboto($size: false, $colour: false, $weight: false,  $lh: false) {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
+@mixin text-small-grey() {
+  color: rgba(0, 0, 0, .54);
+  font-size: 14px;
+  text-transform: none;
+  text-decoration: none;
+}
+
+:host(app-header) {
+  padding-top: 0;
+  padding-bottom: 6.5rem;
+  display: grid;
+
+  header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0 calculateRem(16px);
+      color: $secondary--color;
+      height: 4rem;
+      background: $primary--color;
+
+      .mat-raised-button {
+        color: $primary--color;
+        margin-right: 1rem;
+      }
+
+      a {
+        text-transform: uppercase;
+      }
+
+      .icon__image {
+        width: calculateRem(20px);
+        height: calculateRem(20px);
+      }
+
+      img {
+        vertical-align: middle;
+      }
+
+      #today {
+        font-size: 0.7rem;
+      }
+
+      #logo {
+        display: flex;
+        margin-right: 1rem;
+
+        a {
+          width: 4.25rem;
+          height: 4.25rem;
+
+          img {
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 807px) {
+  #today {
+    width: 50%;
+  }
+
+  #logo {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  :host(app-header) {
+    padding-top: 0;
+    padding-bottom: 1rem;
+
+    header {
+      position: relative;
+
+      nav {
+        height: 7rem;
+        display: flex;
+        padding: 1rem 2rem 0;
+
+        > div {
+          margin-top: 1rem;
+        }
+
+        #today {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  :host(app-header) {
+    padding-bottom: 0;
+
+    header {
+      nav {
+        app-search-bar {
+          width: 75%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+
+<div>
+  <table>
+  <th *ngFor = "let column of headers">
+    {{column }} |
+  </th>
+  <tr *ngFor = "let row of rows" (click)="selectRow(row)">
+    <td >
+      {{row['id']}}
+    </td>
+
+    <td >
+      {{row['name']}}
+    </td>
+
+    <td >
+      {{row['notify']}}
+    </td>
+
+    <td *ngIf="!enablesms[row['id']]"><button (click)="enableSmsNotification(row['id'])" >Enable SMS Notifications</button></td>
+    <td *ngIf="enablesms[row['id']]">Enabled SMS Notifications</td>
+    <td *ngIf="!enableemail[row['id']]"><button (click)="enableEmailNotification(row['id'])" >Enable email Notifications</button></td>
+    <td *ngIf="enableemail[row['id']]">Enabled Email Notifications</td>
+    <td *ngIf="!enablewhatsapp[row['id']]"><button (click)="enableWhatsAppNotification(row['id'])" >Enable whatsApp Notifications</button></td>
+    <td *ngIf="enablewhatsapp[row['id']]">Enabled WhatsApp Notifications</td>
+  </tr>
+  </table>
+  </div>
+<br>
+<br>
+<div>
+  <div class="container">
+  <table *ngIf="selectorRow.length>0" >
+  <th *ngFor = "let column of head">
+    {{column }} |
+  </th>
+  <tr *ngFor = "let row of selectorRow">
+    <td >
+      {{row.id}}  |
+    </td>
+
+    <td >
+      {{row.method}} |
+    </td>
+    <td >
+      {{row.orderStatus}} |
+    </td>
+    <td >
+      {{row.subject}} |
+    </td>
+    <td >
+      {{row.text}} |
+    </td>
+    <td >
+      {{row.to}} |
+    </td>
+    <td >
+      {{row.type}} |
+
+    </td>
+    </table>
+    </div>
+</div>

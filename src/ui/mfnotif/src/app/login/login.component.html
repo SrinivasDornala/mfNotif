@@ -1,0 +1,19 @@
+<div class="container"  *ngIf="user.id==null">
+<form #myForm="ngForm" (ngSubmit)="onClickSubmit(myForm.value)">
+  <p>
+    <label>Login with User Id :  </label>
+    <input type="text" name ="id"  [(ngModel)]="id" required>
+  </p>
+  <p>
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+  </p>
+</form>
+</div>
+<div class="container" *ngIf="user.id!=null" >
+  <ng-container>
+    <app-header [user] ="user"></app-header>
+    <app-home [id]="user.id"></app-home>
+  </ng-container>
+
+</div>
+

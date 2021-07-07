@@ -1,0 +1,41 @@
+  [
+    {
+      "messageType": "Order Placed",
+      "messageText" : "Order Number O123 has been Placed",
+      "messageMethod": "sms",
+      "messageRecipient": "+919172568892",
+      "messageSender": "+919175265452",
+      "messageSubject": "Your Order has been Placed -your order number is O123"
+    },{
+      "messageType": "Order Placed",
+      "messageText" : "Order Number O124 has been Placed",
+      "messageMethod": "email",
+      "messageRecipient": "abc@mail.com",
+      "messageSender": "test@mail.com",
+      "messageSubject": "Your Order has been Placed -your order number is O124"
+    },
+    {
+      "messageType": "Order Placed",
+      "messageText" : "Order Number O125 has been Placed",
+      "messageMethod": "email",
+      "messageRecipient": "abc@mail.com",
+      "messageSender": "test@mail.com",
+      "messageSubject": "Your Order has been Placed -your order number is O125"
+    },
+    {
+      "messageType": "Order Canceled",
+      "messageText" : "Order Number O126 has been canceled",
+      "messageMethod": "whatsapp",
+      "messageRecipient": "+919177565455",
+      "messageSender": "+919177256665",
+      "messageSubject": "Your Order has been canceled -your order number is O126"
+    },
+    {
+      "messageType": "Order Shipped",
+      "messageText" : "Order Number O127 has been Shipped",
+      "messageMethod": "email",
+      "messageRecipient": "abc@mail.com",
+      "messageSender": "test@mail.com",
+      "messageSubject": "Your Order has been Shipped -your order number is O127"
+    }
+]
